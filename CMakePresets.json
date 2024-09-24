@@ -1,0 +1,34 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 25,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "x64",
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "toolchainFile": "x64-windows-gcc.cmake",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "FLAGS_COMMON": "-Wall -Werror",
+                "FLAGS_COMMON_CPP": " -std=c++17",         
+                "FLAGS_DEBUG": "-O0 -g3",
+                "FLAGS_RELEASE": "-Os -g3"  
+            }
+        }            
+    ],    
+    "buildPresets": [        
+        {
+            "name": "x64",
+            "configurePreset": "x64",
+            "configuration": "Debug",
+            "targets": [
+                "using-the-container",
+                "2024-09-30-suite"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "C_Cpp.default.compileCommands": "./build/compile_commands.json",
+    "vcpkg.storageLocation": "C:/Workspaces/vcpkgvsc",    
+    "cmake.copyCompileCommands": "${workspaceRoot}/build/compile_commands.json",
+    "cmake.options.advanced": {
+        "configurePreset": { "statusBarVisibility": "compact"},
+        "buildPreset": { "statusBarVisibility": "compact" },
+        "build": { "statusBarVisibility": "inherit" },
+        "buildTarget": { "statusBarVisibility": "compact" },
+        "launch": { "statusBarVisibility": "hidden" },
+        "launchTarget": { "statusBarVisibility": "compact" },
+        "debug": {"statusBarVisibility": "hidden"},
+        "testPreset": { "statusBarVisibility": "hidden" },
+        "ctest": { "statusBarVisibility": "compact" },
+        "packagePreset": { "statusBarVisibility": "hidden" },
+        "cpack": { "projectStatusVisibility": "hidden" },
+        "workflowPreset": {"statusBarVisibility": "hidden"},
+        "workflow": {"projectStatusVisibility": "hidden"}
+    },   
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "cmake.generator": "Ninja Multi-Config",
+    "testMate.cpp.test.workingDirectory": "${workspaceFolder}",
+    "testMate.cpp.test.executables": "{build,Build,BUILD,out,Out,OUT}/**/tests/**/*"
+}

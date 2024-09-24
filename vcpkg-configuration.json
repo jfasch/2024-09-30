@@ -1,0 +1,15 @@
+{
+  "registries": [
+    {
+      "name": "fronius",
+      "location": "https://vcpkg.fronius.com/frovcpkg.zip",
+      "kind": "artifact"
+    }
+  ],
+  "requires": {
+    "fronius:cmake": "* 3.27.4",
+    "fronius:ninja": "* 1.11.1",
+    "fronius:mingw-w64": "* 13.2.0"
+  }
+}
+
