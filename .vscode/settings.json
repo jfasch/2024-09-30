@@ -20,5 +20,6 @@
     "cmake.sourceDirectory": "${workspaceFolder}",
     "cmake.generator": "Ninja Multi-Config",
     "testMate.cpp.test.workingDirectory": "${workspaceFolder}",
-    "testMate.cpp.test.executables": "{build,Build,BUILD,out,Out,OUT}/**/tests/**/*"
+    "testMate.cpp.test.executables": "{build,Build,BUILD,out,Out,OUT}/**/tests/**/*",
+    "cmake.ctest.testExplorerIntegrationEnabled": false
 }
