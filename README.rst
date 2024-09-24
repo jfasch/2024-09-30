@@ -56,3 +56,15 @@ Test
    [  FAILED  ] some_first_test.test_that_fails
    
     1 FAILED TEST
+
+Vcpkg
+----
+
+Run the following powershell script to install vcpkg and its dependencies. 
+.. code-block:: console
+
+   $ .\install_vcpkg.ps1
+
+Vscode should open with the environment variables set correctly (cmake, gcc & ninja)
+.. image:: docs/vscode_build.png
+   :width: 600

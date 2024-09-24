@@ -1,5 +1,5 @@
 # Set environment variables
-.\scripts\setEnvironmentVariables.ps1
+.\setEnvironmentVariables.ps1
 
 $mutex = New-Object System.Threading.Mutex($false, "Global\VCPKG_ACTIVATE_MUTEX")
 
