@@ -59,12 +59,13 @@ Test
 
 Vcpkg
 ----
+Start VScode and Open the folder where the project is checked out (File -> Open Folder).
 
-Run the following powershell script to install vcpkg and its dependencies. 
-.. code-block:: console
+Install the following extensions that show up in the RECOMMENDED Section:
+- C/C++
+- C/C++ Extension Pack
+- CMake
+- Embedded Tools (Required for VCPKG)
+- C++ TestMate
 
-   $ .\install_vcpkg.ps1
-
-Vscode should open with the environment variables set correctly (cmake, gcc & ninja)
-.. image:: docs/vscode_build.png
-   :width: 600
+After all extensions are installed, press CTRL + Shift + P and enter the command vcpkg activate.
