@@ -2,6 +2,7 @@ ADD_EXECUTABLE(
   2024-09-30-suite
 
   some-first-test.cpp
+  raw-mem-sensor.cpp
 )
 
 TARGET_LINK_LIBRARIES(
