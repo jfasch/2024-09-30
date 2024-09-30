@@ -56,3 +56,16 @@ Test
    [  FAILED  ] some_first_test.test_that_fails
    
     1 FAILED TEST
+
+Vcpkg
+----
+Start VScode and Open the folder where the project is checked out (File -> Open Folder).
+
+Install the following extensions that show up in the RECOMMENDED Section:
+- C/C++
+- C/C++ Extension Pack
+- CMake
+- Embedded Tools (Required for VCPKG)
+- C++ TestMate
+
+After all extensions are installed, press CTRL + Shift + P and enter the command vcpkg activate.
