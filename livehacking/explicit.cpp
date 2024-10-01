@@ -1,16 +1,39 @@
-class String
+#include <string>
+
+class CharArrayHolder
 {
 public:
-    String(const char* s)
+    /*explicit!!!*/ CharArrayHolder(char* mem) // <-- "explicit" is necessary to uncover bugs
     {
-
+        _mem = mem;
+    }
+    ~CharArrayHolder()
+    {
+        delete[] _mem;
     }
 
+    const char* mem() const { return _mem; }
+
 private:
-    char* _s;
+    char* _mem;
 };
+
+void do_something_with(const CharArrayHolder& h, unsigned int ntimes)
+{
+    while (ntimes--)
+        if (true) {
+            const void* my_mem = h.mem();
+            // do something with mem
+        }
+}
 
 int main()
 {
+    char* mem = new char[10];
+    CharArrayHolder r(mem);
+
+    do_something_with(r, 10);
+    do_something_with(mem/*!*/, 10);  // <-- temporary CharArrayHolder object
+
     return 0;
 }
