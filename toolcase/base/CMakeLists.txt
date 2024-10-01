@@ -1,7 +1,6 @@
 ADD_LIBRARY(toolcase-base
 
-  container.h
-  container.cpp
+  dummy.cpp
 )
 
 TARGET_INCLUDE_DIRECTORIES(

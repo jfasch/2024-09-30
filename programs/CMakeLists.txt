@@ -1,11 +1,11 @@
 ADD_EXECUTABLE(
-  using-the-container
+  dummy-proggy
 
-  using-the-container.cpp
+  dummy-proggy.cpp
 )
 
 TARGET_LINK_LIBRARIES(
-  using-the-container
+  dummy-proggy
 
   toolcase-base
 )

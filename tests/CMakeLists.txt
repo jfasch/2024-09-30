@@ -1,8 +1,10 @@
 ADD_EXECUTABLE(
   2024-09-30-suite
 
-  some-first-test.cpp
   raw-mem-sensor.cpp
+  file-sensor-suite.cpp
+
+  tmpdir-fixture.cpp
 )
 
 TARGET_LINK_LIBRARIES(
