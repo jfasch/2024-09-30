@@ -1,6 +1,6 @@
 ADD_LIBRARY(toolcase-base
 
-  dummy.cpp
+  raw-mem-sensor.cpp
 )
 
 TARGET_INCLUDE_DIRECTORIES(
