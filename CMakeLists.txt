@@ -1,19 +1,21 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.16)
-PROJECT(2024-09-30)
+cmake_minimum_required(VERSION 3.16)
+project(2024-09-30 LANGUAGES C CXX)
 
 # compiler options. (we only check for gcc)
-if (${CMAKE_COMPILER_IS_GNUCC})
-#   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g3 -Wall -Werror")
-#   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O0 -g3 -Wall -Werror")
-   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g3")
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -g3 -Wall")
+if (${CMAKE_C_COMPILER_ID} STREQUAL GNU)
+   string(APPEND CMAKE_C_FLAGS   " -Wall -Werror")
+   string(APPEND CMAKE_CXX_FLAGS " -Wall -Werror -std=c++17")
+   if ("${CMAKE_BUILD_TYPE}" STREQUAL Debug)
+     string(APPEND CMAKE_C_FLAGS   " -O0 -g3")
+     string(APPEND CMAKE_CXX_FLAGS " -O0 -g3")
+   endif()
 endif()
 
-ADD_SUBDIRECTORY(programs)
-ADD_SUBDIRECTORY(toolcase)
-ADD_SUBDIRECTORY(tests)
+add_subdirectory(programs)
+add_subdirectory(toolcase)
+add_subdirectory(tests)
 
-ADD_SUBDIRECTORY(livehacking)
+add_subdirectory(livehacking)
 
-ADD_SUBDIRECTORY(googletest)
+add_subdirectory(googletest)
 
