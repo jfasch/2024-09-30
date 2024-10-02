@@ -1,5 +1,6 @@
 #include <base/file-sensor.h>
 #include <base/CoutSink.h>
+#include "base/CsvSink.h"
 
 #include <cstring>
 #include <vector>
@@ -28,8 +29,9 @@ int main(int argc, char** argv)
 
     FileSensor my_sensor(argv[1]);
     CoutSink my_sink;
+    CsvSink my_csv_sink("out.csv");
 
-    loop(my_sensor, my_sink);
+    loop(my_sensor, my_csv_sink);
 
     return 0;
 }

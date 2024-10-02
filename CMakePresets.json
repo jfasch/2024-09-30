@@ -26,7 +26,7 @@
             "configurePreset": "x64",
             "configuration": "Debug",
             "targets": [
-                "using-the-container",
+                "thermometer-firmware",
                 "2024-09-30-suite"
             ]
         }
