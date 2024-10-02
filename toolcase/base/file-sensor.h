@@ -1,15 +1,17 @@
 #pragma once
 
+#include "sensor.h"
+
 #include <filesystem>
 
 
-class FileSensor
+class FileSensor : public Sensor
 {
 public:
-    FileSensor(std::filesystem::path filename)
+    FileSensor(const std::filesystem::path& filename)
     : _filename(filename) {}
 
-    double get_temperature();
+    double get_temperature() override;
 
 private:    
     std::filesystem::path _filename;
