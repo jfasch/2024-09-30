@@ -8,7 +8,7 @@ using namespace std;
 
         cout << "frame am can: id: 0x" << hex << (int)frame.id << "  and data : " ;
         for (int i: frame.data){
-            cout  << "0x" << hex << (int)frame.data[i] << " , " ;
+            cout  << "0x" << hex << i << " , " ;
         }
         cout << endl;
     }
