@@ -24,11 +24,7 @@
         {
             "name": "x64",
             "configurePreset": "x64",
-            "configuration": "Debug",
-            "targets": [
-                "using-the-container",
-                "2024-09-30-suite"
-            ]
+            "configuration": "Debug"
         }
     ]
 }
