@@ -2,7 +2,6 @@ ADD_LIBRARY(toolcase-base
 
   raw-mem-sensor.cpp
   file-sensor.cpp
-  CoutDataSink.cpp
   CanDataSink.cpp
   CanCoutPeriph.cpp
 )
