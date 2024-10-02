@@ -6,7 +6,7 @@ class ICan{
     public:
         struct Frame{
             uint8_t id;
-            uint8_t data[7];
+            uint8_t data[8];
         };
     virtual ~ICan(void) = default;
     virtual void SendFrame(const Frame& frame) = 0;
