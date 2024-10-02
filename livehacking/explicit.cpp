@@ -24,6 +24,7 @@ void do_something_with(const CharArrayHolder& h, unsigned int ntimes)
         if (true) {
             const void* my_mem = h.mem();
             // do something with mem
+            (void)my_mem;                              // <-- not actually doing anything
         }
 }
 
@@ -33,7 +34,8 @@ int main()
     CharArrayHolder r(mem);
 
     do_something_with(r, 10);
-    do_something_with(mem/*!*/, 10);  // <-- temporary CharArrayHolder object
+    do_something_with(mem/*!*/, 10);  // <-- BUG: temporary CharArrayHolder object
+                                      // <-- leading to double-free
 
     return 0;
 }

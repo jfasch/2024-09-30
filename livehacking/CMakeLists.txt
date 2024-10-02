@@ -68,3 +68,12 @@ ADD_EXECUTABLE(
   file-io.cpp
 )
 
+ADD_EXECUTABLE(
+  default-init
+  default-init.cpp
+)
+
+ADD_EXECUTABLE(
+  inheritance
+  inheritance.cpp
+)

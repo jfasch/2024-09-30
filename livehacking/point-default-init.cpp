@@ -3,19 +3,17 @@
 class point
 {
 public:
-    point() = default;
+    point() = default;                                 // <-- initialize members as given below
     point(int x, int y)
-    {
-        _x = x;
-        _y = y;
-    }
+    : _x{x}, _y{y}                                     // <-- otherwise initialized
+    {}
 
     int x() const { return _x; }
     int y() const { return _y; }
 
 private:
-    int _x{};
-    int _y{};
+    int _x{};                                          // <-- default unless otherwise initialized
+    int _y{};                                          // <-- default unless otherwise initialized
 };
 
 int main()

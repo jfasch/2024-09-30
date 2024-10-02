@@ -3,16 +3,9 @@
 class point
 {
 public:
-    point()
-    {
-        _x = _y = 0;
-    }
-
+    point() = default;
     point(int x, int y)
-    {
-        _x = x;
-        _y = y;
-    }
+    : _x{x}, _y{y} {}
 
     int x() const { return _x; }
     int y() const { return _y; }
@@ -21,10 +14,9 @@ public:
     {
         return _x == rhs._x && _y == rhs._y;
     }
-
     bool operator!=(const point& rhs) const
     {
-        return ! operator==(rhs);
+        return !operator==(rhs);
     }
 
     void move(int x, int y)
@@ -46,8 +38,8 @@ public:
     }
 
 private:
-    int _x;
-    int _y;
+    int _x{};
+    int _y{};
 };
 
 std::ostream& operator<<(std::ostream& o, const point& p)
