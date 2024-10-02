@@ -1,22 +1,10 @@
 ADD_EXECUTABLE(
-  sensor-can
-  sensor-can.cpp
+  thermometer-firmware
+  thermometer-firmware.cpp
 )
 
 TARGET_LINK_LIBRARIES(
-  sensor-can
-
-  toolcase-base
-)
-
-ADD_EXECUTABLE(
-  dummy-proggy
-
-  dummy-proggy.cpp
-)
-
-TARGET_LINK_LIBRARIES(
-  dummy-proggy
+  thermometer-firmware
 
   toolcase-base
 )

@@ -9,7 +9,7 @@
 using namespace std::chrono_literals;
 
 
-void can_loop(Sensor& sensor)
+void loop(Sensor& sensor)
 {
     for (;;) {
         double temperature = sensor.get_temperature();
@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 
     FileSensor my_sensor(argv[1]);
 
-    can_loop(my_sensor);
+    loop(my_sensor);
 
     return 0;
 }
