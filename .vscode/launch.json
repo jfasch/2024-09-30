@@ -7,13 +7,13 @@
             "request": "launch",
             "program": "${command:cmake.launchTargetPath}",
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "gdb.exe",
             "args": [
-                "C:/Users/ofenberger.tobias/Workspaces/JFaschKurs/2024-09-30/temp.txt",
+                "temp.txt",
              ]
         }
     ]
