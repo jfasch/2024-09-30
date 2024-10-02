@@ -1,4 +1,5 @@
 #include <base/file-sensor.h>
+#include <base/CoutSink.h>
 
 #include <cstring>
 #include <vector>
@@ -9,11 +10,11 @@
 using namespace std::chrono_literals;
 
 
-void loop(Sensor& sensor)
+void loop(Sensor& sensor, IDataSink& sink)
 {
     for (;;) {
         double temperature = sensor.get_temperature();
-        std::cout << temperature << std::endl;
+        sink.write(temperature);
         std::this_thread::sleep_for(1s);
     }
 }
@@ -26,8 +27,9 @@ int main(int argc, char** argv)
     }
 
     FileSensor my_sensor(argv[1]);
+    CoutSink my_sink;
 
-    loop(my_sensor);
+    loop(my_sensor, my_sink);
 
     return 0;
 }
