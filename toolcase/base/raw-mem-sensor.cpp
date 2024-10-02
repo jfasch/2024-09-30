@@ -1,5 +1,5 @@
 #include "raw-mem-sensor.h"
-
+#include <chrono>
 
 double RawMemorySensor::get_temperature()
 {
