@@ -1,8 +1,8 @@
 #include <base/file-sensor.h>
 #include "base/IDataSink.h"
-#include "base/CoutDataSink.h"
 #include "base/CanDataSink.h"
 #include "base/CanCoutPeriph.h"
+#include <base/CoutSink.h>
 
 #include <cstring>
 #include <vector>
@@ -18,10 +18,7 @@ void loop(Sensor& sensor, IDataSink& sink)
 {
     for (;;) {
         double temperature = sensor.get_temperature();
-        // std::cout << temperature << std::endl;
-        CanDataSink::Frame compareFrame1 = {1,{0}}, compareFrame2 = {2,{0}};
         sink.write(temperature);
-        std::cout << "frames are ident: " << (compareFrame1 == compareFrame2) << std::endl;
         std::this_thread::sleep_for(1s);
     }
 }
@@ -34,10 +31,11 @@ int main(int argc, char** argv)
     }
 
     FileSensor my_sensor(argv[1]);
-    CoutDataSink    coutSink;
     CanCout         canCout;
     CanDataSink     canDataSink(canCout, DEFINED_CAN_ID);
+    CoutSink        my_sink;
 
     loop(my_sensor, canDataSink);
+
     return 0;
 }

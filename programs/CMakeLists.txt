@@ -8,3 +8,9 @@ TARGET_LINK_LIBRARIES(
 
   toolcase-base
 )
+
+
+ADD_EXECUTABLE(
+  chrono
+  chrono.cpp
+)
