@@ -3,6 +3,7 @@
 #include "base/CanDataSink.h"
 #include "base/CanCoutPeriph.h"
 #include <base/CoutSink.h>
+#include "base/CsvSink.h"
 
 #include <cstring>
 #include <vector>
@@ -34,8 +35,9 @@ int main(int argc, char** argv)
     CanCout         canCout;
     CanDataSink     canDataSink(canCout, DEFINED_CAN_ID);
     CoutSink        my_sink;
+    CsvSink         my_csv_sink("out.csv");
 
-    loop(my_sensor, canDataSink);
+    loop(my_sensor, my_csv_sink);
 
     return 0;
 }
