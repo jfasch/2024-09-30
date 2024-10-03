@@ -77,3 +77,8 @@ ADD_EXECUTABLE(
   inheritance
   inheritance.cpp
 )
+
+ADD_EXECUTABLE(
+  chrono
+  chrono.cpp
+)
