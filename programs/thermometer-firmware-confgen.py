@@ -44,6 +44,13 @@ for name, section in config.items():
         if ty == 'stdout':
             sink = ('base/CoutSink.h', 'CoutSink', ())
             continue
+        if ty == 'csv':
+            path = section.get('path')
+            if path is None:
+                print(f'section "{name}" has no "Path" attribute', file=sys.stderr)
+                sys.exit(1)
+            sink = ('base/CsvSink.h', 'CsvSink', (f'"{path}"',))
+            continue
 
         print(f'section "{name}": unknown "Type" attribute "{ty}"', file=sys.stderr)
         sys.exit(1)
@@ -63,7 +70,7 @@ lines.append('')
 lines.append(f'static {sensor_type} _sensor({','.join(sensor_params)});')
 lines.append(f'static {sink_type} _sink({','.join(sink_params)});')
 lines.append('')
-lines.append('Sensor& the_sensor = _sensor;')
+lines.append('ISensor& the_sensor = _sensor;')
 lines.append('IDataSink& the_sink = _sink;')
 
 with open(outfile, 'w') as f:
