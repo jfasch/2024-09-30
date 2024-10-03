@@ -1,4 +1,3 @@
-
 #include "CanCoutPeriph.h"
 #include <iostream>
 
