@@ -1,8 +1,8 @@
 #pragma once
 
-class Sensor
+class ISensor
 {
 public:
-    virtual ~Sensor() = default;
+    virtual ~ISensor() = default;
     virtual double get_temperature() = 0;
 };

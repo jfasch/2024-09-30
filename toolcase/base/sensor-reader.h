@@ -1,6 +1,6 @@
 #pragma once
 
-#include "sensor.h"
+#include "ISensor.h"
 #include "IDataSink.h"
 #include <chrono>
 #include <thread>
@@ -11,7 +11,7 @@ using namespace std::chrono_literals;
 class SensorReader
 {
     public:
-    SensorReader(Sensor& sensor, IDataSink& sink) :
+    SensorReader(ISensor& sensor, IDataSink& sink) :
     _sensor(sensor), _sink(sink)
     {
         
@@ -31,6 +31,6 @@ class SensorReader
             _sink.write(_sensor.get_temperature());
             std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
         }
-        Sensor& _sensor;
+        ISensor& _sensor;
         IDataSink& _sink;
 };

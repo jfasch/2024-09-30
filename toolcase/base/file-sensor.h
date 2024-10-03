@@ -1,11 +1,11 @@
 #pragma once
 
-#include "sensor.h"
+#include "ISensor.h"
 
 #include <filesystem>
 
 
-class FileSensor : public Sensor
+class FileSensor : public ISensor
 {
 public:
     FileSensor(const std::filesystem::path& filename)
