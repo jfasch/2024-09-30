@@ -1,6 +1,6 @@
-
-
 #include "CanDataSink.h"
+
+#include <cstring>
 
 void CanDataSink::write(double value){
     Frame frame;

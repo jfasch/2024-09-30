@@ -3,6 +3,7 @@ ADD_EXECUTABLE(
 
   raw-mem-sensor.cpp
   file-sensor-suite.cpp
+  can-sink-suite.cpp
 
   tmpdir-fixture.cpp
 )
