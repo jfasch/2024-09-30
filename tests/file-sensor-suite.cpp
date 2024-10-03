@@ -5,6 +5,7 @@
 #include <gtest/gtest.h>
 #include <filesystem>
 #include <fstream>
+#include <expected>
 
 struct file_sensor_suite : public tmpdir_fixture  {};
 
