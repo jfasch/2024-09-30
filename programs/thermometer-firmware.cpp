@@ -13,6 +13,7 @@
 
 const uint8_t   DEFINED_CAN_ID = 88;
 
+using namespace dts;
 
 int main(int argc, char** argv)
 {

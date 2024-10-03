@@ -5,6 +5,7 @@
 
 #include <cstdint>
 
+namespace dts {
 
 class RawMemorySensor : public ISensor
 {
@@ -19,3 +20,5 @@ public:
 private:
     char* _mem;
 };
+
+}

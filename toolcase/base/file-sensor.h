@@ -4,6 +4,7 @@
 
 #include <filesystem>
 
+namespace dts {
 
 class FileSensor : public ISensor
 {
@@ -16,3 +17,5 @@ public:
 private:    
     std::filesystem::path _filename;
 };
+
+}

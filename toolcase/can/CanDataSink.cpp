@@ -2,6 +2,8 @@
 
 #include <cstring>
 
+namespace dts {
+
 void CanDataSink::write(double value){
     Frame frame;
     frame.id = _id;
@@ -12,4 +14,6 @@ void CanDataSink::write(double value){
     frame.data[2] = (milliGrad >> 16) & 0xff;
     frame.data[3] = (milliGrad >> 24) & 0xff;
     this->_iCan.SendFrame(frame);
+}
+
 }

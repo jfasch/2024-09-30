@@ -5,8 +5,7 @@
 #include <chrono>
 #include <thread>
 
-using namespace std::chrono_literals;
-
+namespace dts {
 
 class SensorReader
 {
@@ -34,3 +33,5 @@ class SensorReader
         ISensor& _sensor;
         IDataSink& _sink;
 };
+
+}

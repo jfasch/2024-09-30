@@ -30,7 +30,7 @@ for name, section in config.items():
             if path is None:
                 print(f'section "{name}" has no "Type" attribute', file=sys.stderr)
                 sys.exit(1)
-            sensor = ('base/file-sensor.h', 'FileSensor', (f'"{path}"',))
+            sensor = ('base/file-sensor.h', 'dts::FileSensor', (f'"{path}"',))
             continue
 
         print(f'section "{name}": unknown "Type" attribute "{ty}"', file=sys.stderr)
@@ -42,14 +42,14 @@ for name, section in config.items():
             print(f'section "{name}" has no "Type" attribute', file=sys.stderr)
             sys.exit(1)
         if ty == 'stdout':
-            sink = ('base/CoutSink.h', 'CoutSink', ())
+            sink = ('base/CoutSink.h', 'dts::CoutSink', ())
             continue
         if ty == 'csv':
             path = section.get('path')
             if path is None:
                 print(f'section "{name}" has no "Path" attribute', file=sys.stderr)
                 sys.exit(1)
-            sink = ('base/CsvSink.h', 'CsvSink', (f'"{path}"',))
+            sink = ('base/CsvSink.h', 'dts::CsvSink', (f'"{path}"',))
             continue
 
         print(f'section "{name}": unknown "Type" attribute "{ty}"', file=sys.stderr)
@@ -70,8 +70,8 @@ lines.append('')
 lines.append(f'static {sensor_type} _sensor({','.join(sensor_params)});')
 lines.append(f'static {sink_type} _sink({','.join(sink_params)});')
 lines.append('')
-lines.append('ISensor& the_sensor = _sensor;')
-lines.append('IDataSink& the_sink = _sink;')
+lines.append('dts::ISensor& the_sensor = _sensor;')
+lines.append('dts::IDataSink& the_sink = _sink;')
 
 with open(outfile, 'w') as f:
     f.write('\n'.join(lines))

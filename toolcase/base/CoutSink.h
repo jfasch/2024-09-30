@@ -4,6 +4,8 @@
 
 #include <iostream>
 
+namespace dts {
+
 class CoutSink : public IDataSink
 {
 public:
@@ -12,3 +14,5 @@ public:
         std::cout << value << std::endl;
     }
 };
+
+}

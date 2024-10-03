@@ -8,6 +8,8 @@
 
 struct file_sensor_suite : public tmpdir_fixture  {};
 
+using namespace dts;
+
 TEST_F(file_sensor_suite, basic)
 {
     std::ofstream(dirname / "temperature") << "27500" << std::endl;

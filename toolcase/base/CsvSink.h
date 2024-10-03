@@ -4,6 +4,8 @@
 #include <fstream>
 
 
+namespace dts {
+
 class CsvSink : public IDataSink
 {
     public:
@@ -29,3 +31,5 @@ class CsvSink : public IDataSink
 
         std::ofstream _file;
 };
+
+}

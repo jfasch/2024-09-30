@@ -3,6 +3,8 @@
 #include <can/ICan.h>
 #include <can/CanDataSink.h>
 
+using namespace dts;
+
 class TestCan : public ICan
 {
 public:

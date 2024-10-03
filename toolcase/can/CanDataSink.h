@@ -3,6 +3,8 @@
 #include "ICan.h"
 #include <base/IDataSink.h>
 
+namespace dts {
+
 class CanDataSink : public IDataSink{
 public:
     using Frame             = ICan::Frame;
@@ -13,3 +15,5 @@ private:
     ICan&                       _iCan;
     const uint8_t               _id;
 };
+
+}

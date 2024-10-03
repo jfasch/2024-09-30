@@ -2,6 +2,8 @@
 #include <base/IDataSink.h>
 #include <base/ISensor.h>
 
+using namespace dts;
+
 extern ISensor& the_sensor;
 extern IDataSink& the_sink;
 

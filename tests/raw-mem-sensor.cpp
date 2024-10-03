@@ -1,6 +1,7 @@
 #include <base/raw-mem-sensor.h>
 #include <gtest/gtest.h>
 
+using namespace dts;
 
 TEST(raw_mem_sensor, basic)
 {

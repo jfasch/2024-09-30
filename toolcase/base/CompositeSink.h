@@ -4,6 +4,8 @@
 #include <vector>
 
 
+namespace dts {
+
 class CompositeSink : public IDataSink
 {
 public:
@@ -21,3 +23,5 @@ public:
 private:
     std::vector<IDataSink*> _sinks;
 };
+
+}
