@@ -1,7 +1,6 @@
-
 #pragma once
 
-#include "base/IDataSink.h"
+#include "IDataSink.h"
 #include <fstream>
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/ICan.h"
+#include "ICan.h"
 #include "IDataSink.h"
 
 class CanDataSink : public IDataSink{

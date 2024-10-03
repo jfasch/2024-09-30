@@ -9,6 +9,7 @@ ADD_LIBRARY(toolcase-base
 TARGET_INCLUDE_DIRECTORIES(
   toolcase-base
 
-  PUBLIC
+  INTERFACE
+
   ..
 )
