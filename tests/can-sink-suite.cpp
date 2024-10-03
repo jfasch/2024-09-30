@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
-#include <base/ICan.h>
-#include <base/CanDataSink.h>
+#include <can/ICan.h>
+#include <can/CanDataSink.h>
 
 class TestCan : public ICan
 {

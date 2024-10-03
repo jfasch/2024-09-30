@@ -1,10 +1,10 @@
 #include <base/file-sensor.h>
-#include "base/IDataSink.h"
-#include "base/CanDataSink.h"
-#include "base/CanCoutPeriph.h"
+#include <base/IDataSink.h>
+#include <can/CanDataSink.h>
+#include <can/CanCoutPeriph.h>
 #include <base/sensor-reader.h>
 #include <base/CoutSink.h>
-#include "base/CsvSink.h"
+#include <base/CsvSink.h>
 #include <base/CompositeSink.h>
 
 #include <cstring>

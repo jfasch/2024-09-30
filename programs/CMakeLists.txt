@@ -5,5 +5,6 @@ ADD_EXECUTABLE(
 TARGET_LINK_LIBRARIES(
   thermometer-firmware
 
+  toolcase-can
   toolcase-base
 )
