@@ -83,5 +83,7 @@ int main()
     std::cout << p4 << std::endl;
     std::cout << p5 << std::endl;
 
+    point p6{p5};
+
     return 0;
 }

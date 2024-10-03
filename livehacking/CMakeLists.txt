@@ -82,3 +82,13 @@ ADD_EXECUTABLE(
   chrono
   chrono.cpp
 )
+
+ADD_EXECUTABLE(
+  string
+  string.cpp
+)
+
+ADD_EXECUTABLE(
+  expected
+  expected.cpp
+)
