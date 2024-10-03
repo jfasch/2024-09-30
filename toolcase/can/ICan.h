@@ -1,7 +1,9 @@
-
 #pragma once
 
 #include "stdint.h"
+
+namespace dts {
+
 class ICan{
     public:
         struct Frame{
@@ -14,4 +16,6 @@ class ICan{
 
 inline bool operator == (ICan::Frame l, ICan::Frame r){
     return l.id == r.id;
+}
+
 }

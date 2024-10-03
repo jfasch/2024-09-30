@@ -2,6 +2,8 @@
 
 #include "sensor.h"
 
+namespace dts {
+
 class TestSensor : public Sensor
 {
 public:
@@ -15,3 +17,5 @@ public:
 private:
     int _temp{};
 };
+
+}
