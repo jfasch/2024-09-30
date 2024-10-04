@@ -1,18 +1,30 @@
 #pragma once
 
-#include "ICan.h"
 #include <base/IDataSink.h>
 
 namespace dts {
 
-class CanDataSink : public IDataSink{
+template <class CAN_Controller>
+class CanDataSink : public IDataSink
+{
 public:
-    CanDataSink(ICan & iCan, const uint8_t id): _iCan(iCan), _id(id){}
+    CanDataSink(CAN_Controller & ctrlr, const uint8_t id): _ctrlr(ctrlr), _id(id){}
     ~CanDataSink(void){}
-    void write(double value) override;
+    void write(double value) override
+    {
+        Frame frame;
+        frame.id = _id;
+        int32_t milliGrad = value * 1000.0;
+
+        frame.data[0] = milliGrad & 0xff;
+        frame.data[1] = (milliGrad >> 8) & 0xff;
+        frame.data[2] = (milliGrad >> 16) & 0xff;
+        frame.data[3] = (milliGrad >> 24) & 0xff;
+        _ctrlr.SendFrame(frame);
+    }
 private:
-    ICan&                       _iCan;
-    const uint8_t               _id;
+    CAN_Controller& _ctrlr;
+    const uint8_t _id;
 };
 
 }

@@ -1,14 +1,13 @@
 #pragma once
 
-#include "ICan.h"
+#include "frame.h"
 
 namespace dts {
 
-class CanCout: public ICan{
+class CanCout
+{
     public:
-        ~CanCout(void){}
-        
-    void SendFrame(const Frame& frame) override ;
+    void SendFrame(const Frame& frame);
 };
 
 }

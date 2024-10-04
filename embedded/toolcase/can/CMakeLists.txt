@@ -1,7 +1,6 @@
 ADD_LIBRARY(emb-toolcase-can
 
-  ICan.h
-  CanDataSink.cpp
+  CanDataSink.h
   CanCoutPeriph.cpp
 
   SocketCANPeriph.h

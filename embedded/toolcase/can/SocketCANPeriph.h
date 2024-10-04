@@ -1,17 +1,17 @@
 #pragma once
 
-#include "ICan.h"
+#include "frame.h"
 #include <string>
 
 namespace dts {
 
-class SocketCAN : public ICan 
+class SocketCAN
 {
 public:
     SocketCAN(const std::string& iface);
     ~SocketCAN();
         
-    void SendFrame(const Frame& frame) override;
+    void SendFrame(const Frame& frame);
 
 private:
     int _socket;                                       // <-- requires resource management!

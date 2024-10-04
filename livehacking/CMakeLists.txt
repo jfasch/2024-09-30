@@ -107,6 +107,11 @@ ADD_EXECUTABLE(
   l-r-value.cpp
 )
 
+ADD_EXECUTABLE(
+  slicing
+  slicing.cpp
+)
+
 
 
 ADD_EXECUTABLE(

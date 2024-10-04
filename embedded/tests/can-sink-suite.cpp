@@ -1,15 +1,14 @@
 #include <gtest/gtest.h>
 
-#include <can/ICan.h>
 #include <can/frame.h>
 #include <can/CanDataSink.h>
 
 using namespace dts;
 
-class TestCan : public ICan
+class TestCan
 {
 public:
-    void SendFrame(const Frame& frame) override
+    void SendFrame(const Frame& frame)
     {
         _last_frame = frame;
     }
