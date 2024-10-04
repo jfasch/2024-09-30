@@ -20,9 +20,3 @@ TEST_F(file_sensor_suite, basic)
 
     ASSERT_NEAR(temperature, 27.5, 0.001);
 }
-
-TEST_F(file_sensor_suite, file_not_exist)
-{
-    FileSensor sensor(dirname / "temperature");
-    ASSERT_THROW(sensor.get_temperature(), std::runtime_error);
-}

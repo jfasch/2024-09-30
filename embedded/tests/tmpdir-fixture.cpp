@@ -1,5 +1,7 @@
 #include "tmpdir-fixture.h"
 
+#include <cassert>
+
 
 void tmpdir_fixture::SetUp()
 {
@@ -19,7 +21,7 @@ void tmpdir_fixture::SetUp()
         if (std::filesystem::create_directory(path_found))
             break;
         if (n_tries == max_tries)
-            throw std::runtime_error("nix tmpdir");
+            assert(false);
 
         n_tries++;
     }

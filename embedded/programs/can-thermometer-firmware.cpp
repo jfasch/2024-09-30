@@ -15,19 +15,22 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    SocketCAN can_iface("mein-test-can");
-    CanDataSink<SocketCAN> can_sink(can_iface, 42);
-    CoutSink cout_sink;
-
     RandomSensor rand_sensor(35.3, 42.3);
     TestSensor test_sensor(42666);
-
-    IDataSink* sink = &can_sink;
     ISensor* sensor = &rand_sensor;
+
+
+    CoutSink cout_sink;
+
+    CanDataSink<SocketCAN> cds(
+        SocketCAN("mein-test-can"), 
+        42);
+
+    DataSinkAlternative<CanDataSink<SocketCAN>, CoutSink> sink(std::move(cds));
 
     std::string how = argv[1];
     if (how == "test") {
-        sink = &cout_sink;
+        sink = std::move(cout_sink);
         sensor = &test_sensor;
     }
     else if (how == "real");
@@ -36,7 +39,7 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    SensorReader reader(*sensor, *sink);
+    SensorReader<DataSinkAlternative<CanDataSink<SocketCAN>, CoutSink>> reader(*sensor, sink);
     reader.loop(1000);
 
     return 0;

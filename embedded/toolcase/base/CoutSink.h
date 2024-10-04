@@ -1,15 +1,15 @@
 #pragma once
 
-#include "IDataSink.h"
+#include "DataSinkAlternative.h"
 
 #include <iostream>
 
 namespace dts {
 
-class CoutSink : public IDataSink
+class CoutSink
 {
 public:
-    void write(double value) override
+    void write(double value)
     {
         std::cout << value << std::endl;
     }

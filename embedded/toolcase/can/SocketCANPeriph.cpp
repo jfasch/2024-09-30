@@ -35,10 +35,33 @@ SocketCAN::SocketCAN(const std::string& iface)
 #endif
 }
 
+SocketCAN::SocketCAN(SocketCAN&& s)
+{
+    _socket = s._socket;
+    s._socket = -1;
+}
+
+SocketCAN& SocketCAN::operator=(SocketCAN&& s)
+{
+#ifdef __linux__
+    if (this != &s) {
+        if (_socket >= 0)
+            close(_socket);
+        _socket = s._socket;
+        s._socket = -1;
+    }
+#else
+    assert(false);
+#endif
+    return *this;
+}
+
 SocketCAN::~SocketCAN()
 {
 #ifdef __linux__
     close(_socket);                                    // <-- release resource
+#else
+    assert(false);
 #endif
 }
         

@@ -2,6 +2,8 @@
 
 #include "ISensor.h"
 
+#include <iostream>
+
 namespace dts {
 
 class TestSensor : public ISensor

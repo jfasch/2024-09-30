@@ -112,10 +112,13 @@ ADD_EXECUTABLE(
   slicing.cpp
 )
 
-
-
 ADD_EXECUTABLE(
   variant
   variant.cpp
+)
+
+ADD_EXECUTABLE(
+  lambda
+  lambda.cpp
 )
 

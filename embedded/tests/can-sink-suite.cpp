@@ -26,6 +26,7 @@ TEST(can_sink_suite, positive_nonnull)
     sink.write(42.666);
 
     ASSERT_EQ(test_can_iface.last_frame().id, 42);
+    ASSERT_EQ(test_can_iface.last_frame().dlc, 4);
 
     // -> 42666
     ASSERT_EQ(test_can_iface.last_frame().data[0], 0xAA);

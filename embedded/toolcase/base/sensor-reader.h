@@ -1,16 +1,17 @@
 #pragma once
 
 #include "ISensor.h"
-#include "IDataSink.h"
 #include <chrono>
 #include <thread>
+#include <iostream>
 
 namespace dts {
 
+template <class Sink>
 class SensorReader
 {
     public:
-    SensorReader(ISensor& sensor, IDataSink& sink) :
+    SensorReader(ISensor& sensor, Sink& sink) :
     _sensor(sensor), _sink(sink)
     {
         
@@ -27,11 +28,12 @@ class SensorReader
     }
     private:
         void iloop(uint32_t milliseconds) {
-            _sink.write(_sensor.get_temperature());
+            double temp = _sensor.get_temperature();
+            _sink.write(temp);
             std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
         }
         ISensor& _sensor;
-        IDataSink& _sink;
+        Sink& _sink;
 };
 
 }
