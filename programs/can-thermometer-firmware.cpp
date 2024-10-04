@@ -6,7 +6,7 @@
 using namespace dts;
 
 
-int main(int argc, char** argv)
+int main()
 {
     SocketCAN can_iface("mein-test-can");
     CanDataSink sink(can_iface, 42);
@@ -14,6 +14,6 @@ int main(int argc, char** argv)
     RandomSensor sensor(35.3, 42.3);
 
     SensorReader reader(sensor, sink);
-    reader.loop(1000, 5);
+    reader.loop(1000);
     return 0;
 }

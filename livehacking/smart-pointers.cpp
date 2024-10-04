@@ -1,32 +1,27 @@
 #include <base/test-sensor.h>
 
-#include <map>
 #include <iostream>
-#include <cstring>
 #include <memory>
 
 using namespace dts;
 
+// class HatNochEineReferenz
+// {
+// public:
+//     HatNochEineReferenz(const std::unique_ptr<TestSensor>& ref) : _ref(ref) {}
+// private:
+//     std::unique_ptr<TestSensor> _ref;
+// };
+
 int main()
 {
-    // <setup phase>
-    std::shared_ptr<TestSensor> s1(new TestSensor(42));
-    std::shared_ptr<ISensor> s2(new TestSensor(666));
+    std::unique_ptr<TestSensor> p(new TestSensor(42666));
+    std::cout << p->get_temperature() << std::endl;
+
+    auto copy = std::move(p);
+    // std::cout << p->get_temperature() << std::endl;
+    std::cout << p.get() << std::endl;
+    std::cout << copy.get() << std::endl;
     
-    std::map<std::string, std::shared_ptr<ISensor>> sensors;
-    sensors["links-oben"] = s1;
-    sensors["rechts-unten"] = s2;
-    // </setup phase>
-
-    // <runtime phase>
-    for (auto [name, sensor]: sensors)
-        std::cout << name << ": " << sensor->get_temperature() << std::endl;
-
-    s1->set_temperature(666.42);
-
-    for (auto [name, sensor]: sensors)
-        std::cout << name << ": " << sensor->get_temperature() << std::endl;
-    // </runtime phase>
-
     return 0;
 }

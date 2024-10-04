@@ -102,7 +102,10 @@ TARGET_LINK_LIBRARIES(
   toolcase-base
 )
 
-
+ADD_EXECUTABLE(
+  l-r-value
+  l-r-value.cpp
+)
 
 
 
@@ -110,3 +113,4 @@ ADD_EXECUTABLE(
   variant
   variant.cpp
 )
+
