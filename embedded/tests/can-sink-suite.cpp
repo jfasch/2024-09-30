@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 
 #include <can/ICan.h>
+#include <can/frame.h>
 #include <can/CanDataSink.h>
 
 using namespace dts;
@@ -13,9 +14,9 @@ public:
         _last_frame = frame;
     }
 
-    const ICan::Frame last_frame() const { return _last_frame; }
+    const Frame last_frame() const { return _last_frame; }
 private:
-    ICan::Frame _last_frame;
+    Frame _last_frame;
 };
 
 TEST(can_sink_suite, positive_nonnull)
