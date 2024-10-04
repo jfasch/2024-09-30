@@ -1,4 +1,15 @@
 ADD_EXECUTABLE(
+  can-thermometer-firmware
+  can-thermometer-firmware.cpp
+)
+TARGET_LINK_LIBRARIES(
+  can-thermometer-firmware
+
+  toolcase-can
+  toolcase-base
+)
+
+ADD_EXECUTABLE(
   thermometer-firmware
   thermometer-firmware.cpp
 )

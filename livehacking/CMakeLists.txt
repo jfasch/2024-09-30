@@ -92,3 +92,12 @@ ADD_EXECUTABLE(
   expected
   expected.cpp
 )
+
+ADD_EXECUTABLE(
+  smart-pointers
+  smart-pointers.cpp
+)
+TARGET_LINK_LIBRARIES(
+  smart-pointers
+  toolcase-base
+)

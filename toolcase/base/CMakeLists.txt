@@ -10,6 +10,7 @@ SET(BASE_HEADER_FILES
   raw-mem-sensor.h
   sensor-reader.h
   test-sensor.h
+  random-sensor.h
 )
 
 ADD_LIBRARY(toolcase-base
@@ -17,6 +18,7 @@ ADD_LIBRARY(toolcase-base
 
   raw-mem-sensor.cpp
   file-sensor.cpp
+  random-sensor.cpp
 )
 
 TARGET_INCLUDE_DIRECTORIES(
