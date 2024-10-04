@@ -101,3 +101,12 @@ TARGET_LINK_LIBRARIES(
   smart-pointers
   toolcase-base
 )
+
+
+
+
+
+ADD_EXECUTABLE(
+  variant
+  variant.cpp
+)
