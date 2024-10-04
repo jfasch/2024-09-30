@@ -23,3 +23,6 @@ add_subdirectory(livehacking)
 
 add_subdirectory(googletest)
 
+
+
+add_subdirectory(embedded)
