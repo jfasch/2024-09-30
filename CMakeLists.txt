@@ -26,3 +26,4 @@ add_subdirectory(googletest)
 
 
 add_subdirectory(embedded-nonvirtual-polymorphic-objects)
+add_subdirectory(embedded-nonvirtual-polymorphic-pointers)

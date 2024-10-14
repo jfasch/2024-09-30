@@ -1,4 +1,4 @@
-ADD_LIBRARY(emb-poly-obj-toolcase-can
+ADD_LIBRARY(emb-poly-ptr-toolcase-can
 
   CanDataSink.h
   CanCoutPeriph.cpp
@@ -7,13 +7,13 @@ ADD_LIBRARY(emb-poly-obj-toolcase-can
   SocketCANPeriph.cpp
 )
 TARGET_LINK_LIBRARIES(
-  emb-poly-obj-toolcase-can
+  emb-poly-ptr-toolcase-can
 
-  emb-poly-obj-toolcase-base
+  emb-poly-ptr-toolcase-base
 )
 
 TARGET_INCLUDE_DIRECTORIES(
-  emb-poly-obj-toolcase-can
+  emb-poly-ptr-toolcase-can
 
   INTERFACE
 

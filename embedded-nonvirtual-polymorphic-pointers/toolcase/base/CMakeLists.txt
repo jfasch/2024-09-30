@@ -1,4 +1,4 @@
-ADD_LIBRARY(emb-poly-obj-toolcase-base
+ADD_LIBRARY(emb-poly-ptr-toolcase-base
 
   CompositeSink.h
   CoutSink.h
@@ -18,7 +18,7 @@ ADD_LIBRARY(emb-poly-obj-toolcase-base
 )
 
 TARGET_INCLUDE_DIRECTORIES(
-  emb-poly-obj-toolcase-base
+  emb-poly-ptr-toolcase-base
 
   INTERFACE
 

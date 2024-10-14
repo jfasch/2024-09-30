@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 
     // instantiate union type for alternatives CanDataSink<SocketCAN>
     // and CoutSink, and initialize it to hold CAN.
-    DataSinkObjectAlternative<CanDataSink<SocketCAN>, CoutSink> sink(std::move(cds));
+    DataSinkAlternative<CanDataSink<SocketCAN>, CoutSink> sink(std::move(cds));
 
     // see if testing is required, and replace sink accordingly
     std::string how = argv[1];
@@ -42,7 +42,7 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    SensorReader<DataSinkObjectAlternative<CanDataSink<SocketCAN>, CoutSink>> reader(*sensor, sink);
+    SensorReader<DataSinkAlternative<CanDataSink<SocketCAN>, CoutSink>> reader(*sensor, sink);
 
     reader.loop(1000);
 

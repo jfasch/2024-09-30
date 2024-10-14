@@ -1,5 +1,5 @@
 ADD_EXECUTABLE(
-  emb-poly-obj-2024-09-30-suite
+  emb-poly-ptr-2024-09-30-suite
 
   raw-mem-sensor.cpp
   file-sensor-suite.cpp
@@ -10,10 +10,10 @@ ADD_EXECUTABLE(
 )
 
 TARGET_LINK_LIBRARIES(
-  emb-poly-obj-2024-09-30-suite
+  emb-poly-ptr-2024-09-30-suite
 
-  emb-poly-obj-toolcase-base
-  emb-poly-obj-toolcase-can
+  emb-poly-ptr-toolcase-base
+  emb-poly-ptr-toolcase-can
 
   gtest_main 
 )
