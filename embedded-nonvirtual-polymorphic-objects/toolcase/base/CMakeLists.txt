@@ -4,7 +4,7 @@ ADD_LIBRARY(emb-toolcase-base
   CoutSink.h
   CsvSink.h
   file-sensor.h
-  IDataSink.h
+  DataSinkAlternative.h
   ISensor.h
   plat.h
   raw-mem-sensor.h

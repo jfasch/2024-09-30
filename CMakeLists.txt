@@ -25,4 +25,4 @@ add_subdirectory(googletest)
 
 
 
-add_subdirectory(embedded)
+add_subdirectory(embedded-nonvirtual-polymorphic-objects)

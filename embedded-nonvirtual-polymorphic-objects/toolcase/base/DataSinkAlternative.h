@@ -11,14 +11,17 @@ template <typename... Alternatives>
 class DataSinkAlternative
 {
 public:
+    // ctor for copyable Alternative types
     template <typename Alternative>
     DataSinkAlternative(const Alternative& alt)
     : _alternatives(alt) {}
 
+    // ctor for movable types
     template <typename Alternative>
     DataSinkAlternative(Alternative&& alt)
     : _alternatives(std::move(alt)) {}
 
+    // assignment for copyable types
     template <typename Alternative>
     DataSinkAlternative& operator=(const Alternative& alt)
     {
@@ -26,6 +29,7 @@ public:
         return *this;
     }
 
+    // assignment for movable types
     template <typename Alternative>
     DataSinkAlternative& operator=(Alternative&& alt)
     {
@@ -44,15 +48,19 @@ private:
     {
         Visitor(double v) : value(v) {}
 
+        auto operator()(auto& alt)   // <-- abbreviated function template
+        {
+            alt.write(value);
+        }
+
+        // ... is the same as:
+
         // template <typename Alternative>
         // void operator()(Alternative alt)
         // {
         //     alt.write(value);
         // }
-        auto operator()(auto& alt)   // <-- abbreviated function template
-        {
-            alt.write(value);
-        }
+
 
         double value;
     };
@@ -60,11 +68,4 @@ private:
     std::variant<Alternatives...> _alternatives;
 };
  
-// class IDataSink
-// {
-// public:
-//     virtual ~IDataSink() = default;
-//     virtual void write(double value) = 0;
-// };
-
 }
