@@ -1,6 +1,6 @@
 #include <base/sensor-reader.h>
 #include <base/test-sensor.h>
-#include <base/DataSinkAlternative.h>
+#include <base/DataSinkPointerAlternative.h>
 #include <gtest/gtest.h>
 
 using namespace dts;
@@ -20,7 +20,7 @@ TEST(sensor_reader_suite, basic)
     double value = -273.15;
     TestSensor sensor(42666);
     MyTestSink test_sink(&value);
-    DataSinkAlternative<MyTestSink> sink(test_sink);
+    DataSinkPointerAlternative<MyTestSink*> sink(&test_sink);
 
     SensorReader rdr(sensor, sink);
     rdr.loop(1, 1);

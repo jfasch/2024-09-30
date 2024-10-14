@@ -1,6 +1,6 @@
 #pragma once
 
-#include <base/DataSinkAlternative.h>
+#include <base/DataSinkPointerAlternative.h>
 
 namespace dts {
 

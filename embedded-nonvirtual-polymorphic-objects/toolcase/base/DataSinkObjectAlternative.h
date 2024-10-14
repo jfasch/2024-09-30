@@ -7,31 +7,31 @@
 
 namespace dts {
 
-template <typename... Alternatives>
+template <typename... AlternativeTypes>
 class DataSinkObjectAlternative
 {
 public:
     // ctor for copyable Alternative types
-    template <typename Alternative>
-    DataSinkObjectAlternative(const Alternative& alt)
+    template <typename AlternativeType>
+    DataSinkObjectAlternative(const AlternativeType& alt)
     : _alternatives(alt) {}
 
     // ctor for movable types
-    template <typename Alternative>
-    DataSinkObjectAlternative(Alternative&& alt)
+    template <typename AlternativeType>
+    DataSinkObjectAlternative(AlternativeType&& alt)
     : _alternatives(std::move(alt)) {}
 
     // assignment for copyable types
-    template <typename Alternative>
-    DataSinkObjectAlternative& operator=(const Alternative& alt)
+    template <typename AlternativeType>
+    DataSinkObjectAlternative& operator=(const AlternativeType& alt)
     {
         _alternatives = alt;
         return *this;
     }
 
     // assignment for movable types
-    template <typename Alternative>
-    DataSinkObjectAlternative& operator=(Alternative&& alt)
+    template <typename AlternativeType>
+    DataSinkObjectAlternative& operator=(AlternativeType&& alt)
     {
         _alternatives = std::move(alt);
         return *this;
@@ -65,7 +65,7 @@ private:
         double value;
     };
 
-    std::variant<Alternatives...> _alternatives;
+    std::variant<AlternativeTypes...> _alternatives;
 };
  
 }

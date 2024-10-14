@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DataSinkAlternative.h"
+#include "DataSinkPointerAlternative.h"
 
 #include <iostream>
 
